@@ -1,0 +1,228 @@
+:root {
+  /* Primary color */
+  --green: #1db489;
+  --red: #dc414c;
+
+  --facebook: #198ff5;
+  --twitter: #1ca0f2;
+  --instagram: linear-gradient(to right, #fdc468, #df4996);
+  --youtube: #c4032a;
+
+  /* --- Light Theme --- */
+
+  --toogleLight: linear-gradient(to right, #378fe6, #3eda82);
+
+  --darkGrayText: #63687e;
+  --veryDarkText: #1e202a;
+  --bgLight: #ffffff;
+  --topBg: #f5f7ff;
+  --cardBg: #f0f2fa;
+
+  /* --- Dark Theme --- */
+
+  --toogleDark: #aeb3cb;
+
+  --DesaturadedText: #8b97c6;
+  --whiteText: #ffffff;
+  --bgDark: #1e202a;
+  --topBgDark: #1f212e;
+  --cardBgDark: #252a41;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* --- Styles header --- */
+
+header {
+  background-color: var(--topBg);
+  position: absolute;
+  height: 275px;
+  width: 100%;
+  z-index: -1;
+}
+header h1 {
+  margin: 40px 164px 0;
+}
+header p {
+  margin: 5px 164px 0;
+  color: var(--darkGrayText);
+}
+.switch {
+  background: var(--toogleLight);
+  border-radius: 300px;
+  width: 100px;
+  height: 20px;
+  border: none;
+  /* position: relative;
+  left: 100px; */
+}
+
+/* --- Styles to grid general --- */
+
+.wrapper {
+  padding: 136px 164px 50px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 257px);
+  grid-template-rows: 284px 52px repeat(2, 125px);
+  grid-gap: 24px 30px;
+  grid-template-areas:
+    "facebook twitter instagram youtube"
+    ". . . ."
+    "card-fb card-fb2 card-ig card-ig2"
+    "card-twr card-twr2 card-yt card-yt2";
+}
+
+/* --- Styles social-media --- */
+
+.social-media {
+  background-color: var(--cardBg);
+  border-radius: 4px;
+  padding: 32px;
+  height: 216px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+.social-media:nth-of-type(1) {
+  border-top: 4px solid var(--facebook);
+  grid-area: facebook;
+}
+.social-media:nth-of-type(2) {
+  border-top: 4px solid var(--twitter);
+  grid-area: twitter;
+}
+.social-media:nth-of-type(3) {
+  border-top: 4px solid transparent;
+  border-image: var(--instagram);
+  border-image-slice: 1;
+  grid-area: instagram;
+}
+.social-media:nth-of-type(4) {
+  border-top: 4px solid var(--youtube);
+  grid-area: youtube;
+}
+.social-media-user {
+  color: var(--darkGrayText);
+  letter-spacing: -0.5px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+}
+.social-media-user img {
+  margin-right: 10px;
+}
+.social-media p:nth-of-type(1) {
+  font-size: 4em;
+  font-weight: 700;
+}
+.social-media p:nth-of-type(2) {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--darkGrayText);
+  margin-top: -30px;
+}
+.social-media-today {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-media-today img {
+  margin-right: 5px;
+}
+
+h2 {
+  margin: 24px 0 0 0;
+  color: var(--darkGrayText);
+}
+
+/* --- Styles cards --- */
+
+.card-grid {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  border-radius: 4px;
+  background-color: var(--cardBg);
+}
+.card.instagram {
+  grid-area: card-ig;
+}
+.card.instagram2 {
+  grid-area: card-ig2;
+}
+.card.facebook {
+  grid-area: card-fb;
+}
+.card.facebook2 {
+  grid-area: card-fb2;
+}
+.card.twitter {
+  grid-area: card-twr;
+}
+.card.twitter2 {
+  grid-area: card-twr2;
+}
+.card.youtube {
+  grid-area: card-yt;
+}
+.card.youtube2 {
+  grid-area: card-yt2;
+}
+.card.facebook p:nth-of-type(1),
+.card.facebook2 p:nth-of-type(1),
+.card.instagram p:nth-of-type(1),
+.card.instagram2 p:nth-of-type(1),
+.card.twitter p:nth-of-type(1),
+.card.twitter2 p:nth-of-type(1),
+.card.youtube p:nth-of-type(1),
+.card.youtube2 p:nth-of-type(1) {
+  font-size: 14px;
+  align-self: center;
+  justify-self: start;
+  padding: 0 20px;
+  color: var(--darkGrayText);
+}
+.card.facebook img:nth-of-type(1),
+.card.facebook2 img:nth-of-type(1),
+.card.instagram img:nth-of-type(1),
+.card.instagram2 img:nth-of-type(1),
+.card.twitter img:nth-of-type(1),
+.card.twitter2 img:nth-of-type(1),
+.card.youtube img:nth-of-type(1),
+.card.youtube2 img:nth-of-type(1) {
+  align-self: center;
+  justify-self: end;
+  padding: 0 24px;
+}
+.card.facebook p:nth-of-type(2),
+.card.facebook2 p:nth-of-type(2),
+.card.instagram p:nth-of-type(2),
+.card.instagram2 p:nth-of-type(2),
+.card.twitter p:nth-of-type(2),
+.card.twitter2 p:nth-of-type(2),
+.card.youtube p:nth-of-type(2),
+.card.youtube2 p:nth-of-type(2) {
+  align-self: center;
+  justify-self: start;
+  padding: 0 20px 10px;
+  color: var(--veryDarkText);
+  font-weight: 700;
+  font-size: 2em;
+}
+.card-grid-perce {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-grid-perce img {
+  margin: 0 -20px 0 30px;
+}
